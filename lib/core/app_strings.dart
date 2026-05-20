@@ -20,7 +20,7 @@ class AppStrings {
 
   // Home AppBar
   static const String tapForBalance = 'Tap for Balance';
-  static const String userName = 'jannat Al Naeem';
+  static const String userName = 'Motaleb Hossain';
 
   // Menu items
   static const String sendMoney = 'Send Money';

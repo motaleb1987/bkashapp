@@ -1,4 +1,5 @@
 import 'package:bkashapp/core/app_colors.dart';
+import 'package:bkashapp/presentation/screens/home/view/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,15 +21,26 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: Duration(milliseconds: 800),
     );
+    _fadeIn = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeIn,
+    );
+    _animationController.forward();
+
+    Future.delayed(Duration(seconds: 3), () {
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        );
+      }
+    });
   }
 
   @override
   void dispose() {
     super.dispose();
     _animationController.dispose();
-
-    _fadeIn = CurvedAnimation(parent: _animationController, curve: Curves.easeIn);
-    _animationController.forward();
   }
 
   @override
@@ -36,7 +48,14 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Center(
-        child: Image.asset('assets/bkash_splash.png', width: 200, height: 200),
+        child: FadeTransition(
+          opacity: _fadeIn,
+          child: SizedBox(
+            width: 100,
+            height: 100,
+            child: Image.asset('assets/bkash_splash.png', width: 200, height: 200),
+          ),
+        ),
       ),
     );
   }
