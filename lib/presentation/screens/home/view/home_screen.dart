@@ -1,8 +1,10 @@
 
 import 'package:bkashapp/core/app_colors.dart';
 import 'package:bkashapp/presentation/screens/home/widget/menu_grid.dart';
+import 'package:bkashapp/presentation/screens/home/widget/quick_features.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/app_strings.dart';
 import '../widget/home_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,7 +21,10 @@ class HomeScreen extends StatelessWidget {
         toolbarHeight: 70,
       ),
       body: Column(children: [
-        MenuGrid()
+        MenuGrid(),
+        SizedBox(height: 16,),
+        Image.asset('assets/offfer_banner.png'),
+        QuickFeatures()
       ],),
     );
   }

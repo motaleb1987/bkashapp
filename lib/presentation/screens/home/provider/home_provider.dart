@@ -12,7 +12,7 @@ class HomeProvider extends ChangeNotifier {
     if (_isExpanded) {
       return _allItems;
     }
-    return _allItems.take(8).toList();
+    return _allItems.take(12).toList();
   }
 
   void toggleExpanded() {

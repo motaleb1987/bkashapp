@@ -1,5 +1,6 @@
 import 'package:bkashapp/core/app_colors.dart';
 import 'package:bkashapp/presentation/screens/home/view/home_screen.dart';
+import 'package:bkashapp/presentation/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
+          MaterialPageRoute(builder: (context) => LoginScreen()),
         );
       }
     });
