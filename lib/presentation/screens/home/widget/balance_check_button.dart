@@ -3,11 +3,20 @@ import 'package:flutter/material.dart';
 import '../../../../core/app_colors.dart';
 import '../../../../core/app_strings.dart';
 
-class BalanceCheckButton extends StatelessWidget {
+class BalanceCheckButton extends StatefulWidget {
   const BalanceCheckButton({super.key});
 
   @override
+  State<BalanceCheckButton> createState() => _BalanceCheckButtonState();
+}
+
+class _BalanceCheckButtonState extends State<BalanceCheckButton> {
+
+  bool _isTapped = false;
+
+  @override
   Widget build(BuildContext context) {
+
     return Container(
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
@@ -36,12 +45,23 @@ class BalanceCheckButton extends StatelessWidget {
             ),
           ),
           SizedBox(width: 8),
-          Text(
-            AppStrings.tapForBalance,
-            style: TextStyle(
-              color: AppColors.black,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _isTapped = !_isTapped;
+              });
+            },
+            child: Container(
+              height: 18,
+              width: 95,
+              child: Text(
+                _isTapped ? AppStrings.totalBalance : AppStrings.tapForBalance,
+                style: TextStyle(
+                  color: AppColors.black,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
 

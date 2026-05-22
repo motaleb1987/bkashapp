@@ -14,7 +14,6 @@ class _HomeAppBarState extends State<HomeAppBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       child: Row(
         children: [
           CircleAvatar(radius: 22, child: Icon(Icons.person, size: 20)),
@@ -33,6 +32,27 @@ class _HomeAppBarState extends State<HomeAppBar> {
               BalanceCheckButton()
             ],
           ),
+         const Spacer(),
+              Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Center(child: Icon(Icons.search_sharp, size: 25,)),
+              ),
+          SizedBox(width: 8,),
+          Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Center(child: Image.asset('assets/bkash.png', color: AppColors.primary, width: 25, height: 25,)),
+          ),
+
         ],
       ),
     );

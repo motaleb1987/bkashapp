@@ -1,11 +1,9 @@
-
 import 'package:bkashapp/core/app_colors.dart';
-import 'package:bkashapp/presentation/screens/home/widget/menu_grid.dart';
-import 'package:bkashapp/presentation/screens/home/widget/quick_features.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/app_strings.dart';
 import '../widget/home_app_bar.dart';
+import '../widget/menu_grid.dart';
+import '../widget/quick_fearues_all_cards.dart';
+import '../widget/quick_features.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,12 +18,20 @@ class HomeScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
       ),
-      body: Column(children: [
-        MenuGrid(),
-        SizedBox(height: 16,),
-        Image.asset('assets/offfer_banner.png'),
-        QuickFeatures()
-      ],),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            MenuGrid(),
+            SizedBox(height: 16),
+            Image.asset('assets/offfer_banner.png'),
+            QuickFeatures(),
+            SizedBox(height: 10),
+            QuickFeaturesAllCards(),
+          ],
+        ),
+      ),
     );
   }
 }
+
+

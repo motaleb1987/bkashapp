@@ -19,4 +19,12 @@ class AppColors {
   static const Color divider = Color(0xFFEEEEEE);
   static const Color bannerDot = Color(0xFFE2136E);
   static const Color bannerDotInactive = Color(0xFFCCCCCC);
+  static const Color yellowDotActive = Color(0xFFFF9A3C);
+
+  static const Color lightGreenBg = Color(0xFFEFF7D3);
+  static const Color lightYellowBg = Color(0xFFFFF1C5);
+  static const Color lightBlueBg = Color(0xFFE3F3F7);
+  static const Color lightBlue = Color(0xFF87BDD8);
+  static const Color lightOrangeBg = Color(0xFFF2AE72);
+
 }

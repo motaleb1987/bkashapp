@@ -21,6 +21,7 @@ class AppStrings {
   // Home AppBar
   static const String tapForBalance = 'Tap for Balance';
   static const String userName = 'Motaleb Hossain';
+  static const String totalBalance = '12000';
 
   // Menu items
   static const String sendMoney = 'Send Money';
